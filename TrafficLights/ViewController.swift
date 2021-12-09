@@ -26,8 +26,15 @@ class ViewController: UIViewController {
         switchStateButton.setTitle(startTitle, for: .normal)
         
         trafficLightsStackView.subviews.forEach() {
-            $0.layer.cornerRadius = $0.bounds.width * 0.5
             $0.alpha = turnOffAlpha
+        }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        switchStateButton.layer.cornerRadius = 10
+        
+        trafficLightsStackView.subviews.forEach() {
+            $0.layer.cornerRadius = $0.frame.width * 0.5
         }
     }
 
